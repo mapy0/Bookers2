@@ -1,0 +1,13 @@
+<!--book詳細画面-->
+<h1>Book detail</h1>
+
+<div>
+ <p><%= attachment_image_tag post_image.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
+  <p><%= @book.title %></p>
+  <p><%= @book.body %></p>
+  <p><%= @book.user.name %></p>
+   <% if @book.user == current_user %>
+    <%= link_to "Destroy", book_path(@book.id), method: :delete %>
+  <% end %>
+
+</div>
